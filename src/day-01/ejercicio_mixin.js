@@ -29,10 +29,10 @@ class User extends Get(class{}){
 
 class Mixin{
     constructor(Base){
-        this._Base=Base || class {};
+        this._Base= Base || class {};
     }
-    mixins(...m){
-        return m.reduceRight((p,m)=>m(p),this._Base)
+    withMixins(...mixins){
+        return mixins.reduceRight((prototype,mixin)=>mixin(prototype),this._Base)
     }
 
 }
@@ -48,14 +48,14 @@ class Mixin{
 
 */
 
-function inherit(Base=class{},...mixins){
-    return new Mixin(Base).mixins(mixins)
+function inherit(Base=class{}){
+    return new Mixin(Base)
 }
 
-class Customer extends inherit(Add,Update,Remove,Get){
+class Customer extends inherit().withMixins(Add,Update,Remove,Get){
 
 }
 
-class User extends inherit(Get){
+class User extends inherit().withMixins(Get){
 
 }
