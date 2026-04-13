@@ -1,37 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-
-        div{
+        div {
             color: red;
         }
 
-        :root{
-            --color:yellow
+        :root {
+            --color: yellow
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
         }
     </style>
 </head>
+
 <body>
 
     <template id="template-calendar">
         <style>
-            :host{
-                color: var(--color,blue)
+            :host {
+                color: var(--color, blue)
             }
         </style>
         <div>Calendar</div>
         <slot></slot>
     </template>
-    <canarias-calendar date="2025-12-05"></canarias-calendar>
-    <canarias-calendar>
-        <div>Hola Mundo</div>
-    </canarias-calendar>
-    <canarias-calendar></canarias-calendar>
-    <canarias-calendar></canarias-calendar>
+    <div class="layout">
+        <canarias-calendar date="2025-12-05"></canarias-calendar>
+        <canarias-calendar></canarias-calendar>
+        <canarias-calendar></canarias-calendar>
+        <canarias-calendar></canarias-calendar>
+    </div>
+
     <script type="module" src="main.js"></script>
 </body>
+
 </html>

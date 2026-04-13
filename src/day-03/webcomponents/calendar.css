@@ -1,3 +1,19 @@
 :host{
-    color: green;
+    display: grid;
+    grid-template-columns: repeat(7,1.5rem);
+    gap:1rem;
+}
+
+.day{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    user-select: none;
+    cursor: pointer;
+}
+
+.day:hover{
+    outline: 1px solid blue;
 }
