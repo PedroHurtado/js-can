@@ -1,0 +1,23 @@
+//https://developer.chrome.com/docs/devtools/console/utilities?hl=es-419
+
+
+HTMLHeadingElement                       Text                               Comment
+
+HTMLElement                              CharacterData                      CharactedData
+
+Element                                     
+
+Node                                     Node                               Node
+
+EventTarget                              EventTarget                        EventTarget
+
+Object                                   Object                             Object
+
+null                                     null                               null
+
+
+SVG
+
+'http://www.w3.org/2000/svg'
+'http://www.w3.org/1999/xhtml'
+'http://www.w3.org/1998/Math/MathML'
