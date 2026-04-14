@@ -3,13 +3,13 @@ import styles from "./item.css" with  { type: "css" };
 export class ProductItem extends HTMLElement {
     #description = ''
     #price = 0
-    constructor(description, price) {
+    constructor(description,price) {
         super();
         this.#description = description
         this.#price = price
         const shadow = this.attachShadow({ mode: 'open' })
         shadow.adoptedStyleSheets = [styles]
-        shadow.appendChild(this.#getTemplate.content.cloneNode(true))
+        shadow.appendChild(this.#getTemplate().content)
     }
 
     #getTemplate() {
@@ -24,3 +24,5 @@ export class ProductItem extends HTMLElement {
         return template;
     }
 }
+
+customElements.define('canarias-item-product', ProductItem)
