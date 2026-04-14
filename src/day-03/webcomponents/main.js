@@ -34,7 +34,7 @@ class Calendar extends HTMLElement {
 
         this.#days.forEach((day,index)=>{
             const textDay = document.createTextNode(day)
-            const divDay = document.createElement('div')
+            const divDay = document.createElement('div')            
             divDay.className = 'day';
             divDay.setAttribute('data-index', index)
             divDay.appendChild(textDay)
@@ -45,6 +45,7 @@ class Calendar extends HTMLElement {
     }
     #handlerClick(ev) {
         const node = ev.composedPath().find(n => n.dataset && 'index' in n.dataset)
+        ev.stopPropagation();
 
         if (node) {
             const { index } = node.dataset
