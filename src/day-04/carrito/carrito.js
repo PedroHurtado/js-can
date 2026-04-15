@@ -23,7 +23,7 @@ export class Carrito extends HTMLElement{
     #handlerCarrito(ev){
         this.#items.push(ev.detail)
         ev.stopPropagation();
-        const total = this.#items.reduce((a,product)=>a+product.price,0) 
+        const total = Service.getTotal(this.#items)
         this.#setTotal(total)
     }
     #setTotal(total){
